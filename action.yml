@@ -1,0 +1,11 @@
+name: "Delete Tag"
+description: "Delete the tag that triggered the workflow"
+branding:
+  icon: "trash"
+  color: "red"
+runs:
+  using: "composite"
+  steps:
+    - name: Delete tag
+      shell: bash
+      run: git push --delete origin ${{ github.event.ref }}
