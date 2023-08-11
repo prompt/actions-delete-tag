@@ -3,7 +3,7 @@
 A GitHub Action that deletes the tag that triggered the workflow.
 
 ```
-pr-mpt/actions-delete-tag@v1
+prompt/actions-delete-tag@v1
 ```
 
 ## Inputs
@@ -32,11 +32,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: pr-mpt/actions-assert@v2
+      - uses: prompt/actions-assert@v2
         with:
           assertion: npm://@assertions/directory-exists
           expected: dist
       - if: failure()
         name: Delete tag
-        uses: pr-mpt/actions-delete-tag@v1
+        uses: prompt/actions-delete-tag@v1
 ```
